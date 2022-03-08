@@ -5,56 +5,46 @@ from file and display them
 SOLUTION :-
 */
 #include <bits/stdc++.h>
-#include<iomanip>
 using namespace std;
 
-class StudentInfo
+class Student
 {
 public:
-    int RollNumber;
+    int RollNo;
     string Name;
     int Class;
     int Year;
-    int Marks;
+    int TotalMarks;
 };
 
 int main()
 {
     ofstream f2;
-    f2.open("studentinfo.txt");
+    f2.open("Q13_output.txt");
 
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 5; i++)
     {
-        StudentInfo object;
-        
-        cout<<"Enter roll number:";
-        cin >> object.RollNumber;
-        f2 << object.RollNumber << "  " << ;
+        Student obj;
+        cout << "Roll No     : ";
+        cin >> obj.RollNo;
+        f2 << obj.RollNo << "  ";
 
+        cout << "Name        : ";
         cin.ignore();
+        getline(cin, obj.Name);
+        f2 << obj.Name << "    ";
         
-        cout<<"Enter student name:";
-        getline(cin, object.Name);
-        f2 << object.Name << "    ";
-        
-        cout<<"Enter student class:";
+        cout << "Class       : ";
+        cin >> obj.Class;
 
-        cin >> object.Class;
-		
-		cout<<"Enter student year:";
-		cin>>object.Year;
-		cout<<"Enter student marks:"; 
-		cin>>object.Marks;
-        f2 << object.Class << "  " << object.Year << "  " << object.Marks << endl;
-        cout<<"\n";
-    }
-    
-    cout<<"\n\n\n\n R.No. Name   Class  Year  Marks \n\n";
-    ifstream f("studentinfo.txt");
+        cout << "Year        : ";
+        cin >> obj.Year;
 
-    if (f.is_open())
-        cout << f.rdbuf();
-    
+        cout << "Total Marks : ";
+        cin >> obj.TotalMarks;
+
+        f2 << obj.Class << "  " << obj.Year << "  " << obj.TotalMarks << endl;
+        }
 
     return 0;
 }
